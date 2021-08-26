@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import './Home.css'
 
 export default class Home extends Component {
 
     state = {
         loading: false,
-        person: null
+        resp: null
     }
 
     async componentDidMount() {
         const url = "http://localhost:4000/getTweets/"
-        const response = await fetch(url)
-        const data = await response.json()
 
-        console.log('user: ', data.results[0])
-        this.setState({ person: data.results[0], loading: false })
+        const response = await axios.post(url, {
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyVVVJRCI6ImFmYmMyMWQxLTY0NTctNDU1Yy1iZDM0LWQwMDUzYWU2MDdjNSIsImV4cCI6MTYyOTk5MTA1M30.WBstV1suzczPB152tAc5Kc6wb-EIpyGgoeaNUevrwKU"
+        })
+
+        console.log('user: ', response)
+        this.setState({ resp: response.data, loading: false })
     }
 
     render() {
@@ -25,13 +28,22 @@ export default class Home extends Component {
                 </div>
 
                 <div className="column middle">
-                    <h2>{this.state.loading || !this.state.person ? <h2>Loading...</h2> : <h2>{<div>{this.state.person.tweet}</div>}</h2>}</h2>
+                    <div className="tweet-Container">
+                        <h2>{this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[0].tweet)}</div>}</div>}</h2>
+                    </div>
+                    <div className="tweet-Container">
+                        <h2>{this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[1].tweet)}</div>}</div>}</h2>
+                    </div>
+                    <div className="tweet-Container">
+                        <h2>{this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[2].tweet)}</div>}</div>}</h2>
+                    </div>
                 </div>
 
                 <div className="column right">
                     <h2>Hello Home 3</h2>
                 </div>
             </div>
+
         )
     }
 }
