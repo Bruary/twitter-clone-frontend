@@ -13,7 +13,7 @@ export default class Home extends Component {
         const url = "http://localhost:4000/getTweets/"
 
         const response = await axios.post(url, {
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyVVVJRCI6ImFmYmMyMWQxLTY0NTctNDU1Yy1iZDM0LWQwMDUzYWU2MDdjNSIsImV4cCI6MTYyOTk5MTA1M30.WBstV1suzczPB152tAc5Kc6wb-EIpyGgoeaNUevrwKU"
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyVVVJRCI6ImFmYmMyMWQxLTY0NTctNDU1Yy1iZDM0LWQwMDUzYWU2MDdjNSIsImV4cCI6MTYzMDAxMTQzM30.MX56x0H7RjK1i9DukQMBeRf6SVwufx1aurEwLwhak0Q"
         })
 
         console.log('user: ', response)
@@ -24,23 +24,33 @@ export default class Home extends Component {
         return (
             <div className="row">
                 <div className="column left">
-                    <h2>Hello Home 1</h2>
+                    <h2>
+
+                    </h2>
                 </div>
 
                 <div className="column middle">
                     <div className="tweet-Container">
-                        <h2>{this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[0].tweet)}</div>}</div>}</h2>
+                        <div>
+                            {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[0].tweet)}</div>}</div>}
+                        </div>
                     </div>
                     <div className="tweet-Container">
-                        <h2>{this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[1].tweet)}</div>}</div>}</h2>
+                        <div>
+                            {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[1].tweet)}</div>}</div>}
+                        </div>
                     </div>
                     <div className="tweet-Container">
-                        <h2>{this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[2].tweet)}</div>}</div>}</h2>
+                        <div>
+                            {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[2].tweet)}</div>}</div>}
+                        </div>
                     </div>
                 </div>
 
                 <div className="column right">
-                    <h2>Hello Home 3</h2>
+                    <h2>
+
+                    </h2>
                 </div>
             </div>
 
