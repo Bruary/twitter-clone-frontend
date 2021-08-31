@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Home from './components/Home'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
+import Home from '../Home/Home'
 import './NavBar.css'
 
 export default class NavBar extends Component {
@@ -10,7 +10,7 @@ export default class NavBar extends Component {
                 <nav className="navbar">
                     <div>
                         <ul className="menu-list">
-                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/home">Home</Link></li>
                             <li><Link to="/explore">Explore</Link></li>
                             <li><Link to="/notifications">Notifications</Link></li>
                             <li><Link to="/profile">Profile</Link></li>
@@ -20,7 +20,7 @@ export default class NavBar extends Component {
                 </nav>
 
                 <Switch>
-                    <Route exact path="/" component={Home} />
+                    <Route path="/home" component={Home} />
                     <Route path="/explore" component={Explore} />
                     <Route path="/notifications" component={Notifications} />
                     <Route path="/profile" component={Profile} />
@@ -32,9 +32,6 @@ export default class NavBar extends Component {
     }
 }
 
-// function Home() {
-//     return <h2>Home</h2>
-// }
 function Explore() {
     return <h2>Explore is here</h2>
 }

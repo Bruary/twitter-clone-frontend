@@ -5,7 +5,7 @@ import './Home.css'
 export default class Home extends Component {
 
     state = {
-        loading: false,
+        loading: true,
         resp: null
     }
 
@@ -13,7 +13,7 @@ export default class Home extends Component {
         const url = "http://localhost:4000/getTweets/"
 
         const response = await axios.post(url, {
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyVVVJRCI6ImFmYmMyMWQxLTY0NTctNDU1Yy1iZDM0LWQwMDUzYWU2MDdjNSIsImV4cCI6MTYzMDAxMTQzM30.MX56x0H7RjK1i9DukQMBeRf6SVwufx1aurEwLwhak0Q"
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyX1VVSUQiOiI1OGYyYjU0My0xMThmLTRiMDUtOThiMi1jMmZmZmRmNDlhN2QiLCJBY2NvdW50X0lEIjoiI0QyRkJDQjI4MUUiLCJleHAiOjE2MzA0Mjg3MzN9.Hn-c40DAWWtTEjOyXJELfDBt7j3UbdkEcdsAXARktP8"
         })
 
         console.log('user: ', response)
