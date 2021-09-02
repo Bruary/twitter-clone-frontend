@@ -68,3 +68,10 @@
     font-weight: bold;
     text-align: center;
 }
+
+.login-form .err .alert{
+    color: black;
+    background-color: red;
+    opacity: 70%;
+    border: none;
+}
