@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './Home.css'
+import AuthContext from '../../context/auth-context'
 
 export default class Home extends Component {
 
@@ -9,11 +10,13 @@ export default class Home extends Component {
         resp: null
     }
 
+    static contextType = AuthContext
+
     async componentDidMount() {
         const url = "http://localhost:4000/getTweets/"
 
         const response = await axios.post(url, {
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyX1VVSUQiOiI1OGYyYjU0My0xMThmLTRiMDUtOThiMi1jMmZmZmRmNDlhN2QiLCJBY2NvdW50X0lEIjoiI0QyRkJDQjI4MUUiLCJleHAiOjE2MzA0Mjg3MzN9.Hn-c40DAWWtTEjOyXJELfDBt7j3UbdkEcdsAXARktP8"
+            token: this.context.token
         })
 
         console.log('user: ', response)

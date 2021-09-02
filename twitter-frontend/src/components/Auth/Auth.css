@@ -70,7 +70,7 @@
 }
 
 .login-form .err .alert{
-    color: black;
+    color: white;
     background-color: red;
     opacity: 70%;
     border: none;

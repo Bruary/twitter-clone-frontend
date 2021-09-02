@@ -27,6 +27,11 @@ export default class Auth extends Component {
         // to prevent sending any request
         event.preventDefault()
 
+        // Incase you are setting correct creds after invalid creds trial
+        this.setState({
+            errMsg: ''
+        })
+
         // when you have a ref, you can access the element using .current
         const email = this.emailElement.current.value
         const password = this.passwordElement.current.value
