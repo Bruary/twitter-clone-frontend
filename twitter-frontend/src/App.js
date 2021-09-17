@@ -5,6 +5,8 @@ import Home from './components/Home/Home'
 import Auth from './components/Auth/Auth'
 import AuthContext from './context/auth-context'
 
+const signinPath = "/api/v1/auth/signin"
+
 export default class App extends Component {
 
   state = {
@@ -31,11 +33,11 @@ export default class App extends Component {
           logout: this.logout
         }}>
           <Switch>
-            {!this.state.token && <Redirect from="/" to="/auth" exact />}
+            {!this.state.token && <Redirect from="/" to={signinPath} exact />}
             {this.state.token && <Redirect from="/" to="/home" exact />}
-            {!this.state.token && <Redirect from="/home" to="/auth" exact />}
-            {this.state.token && <Redirect from="/auth" to="/home" exact />}
-            {!this.state.token && <Route path="/auth" exact component={Auth} />}
+            {!this.state.token && <Redirect from="/home" to={signinPath} exact />}
+            {this.state.token && <Redirect from={signinPath} to="/home" exact />}
+            {!this.state.token && <Route path={signinPath} exact component={Auth} />}
             {this.state.token && <Route path="/home" exact component={NavBar} />}
             {this.state.token && <Route path="/explore" exact component={Explore} />}
             {this.state.token && <Route path="/notifications" exact component={Notifications} />}

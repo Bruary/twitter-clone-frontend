@@ -1,9 +1,13 @@
+
+html {background-image: linear-gradient( 135deg, #CE9FFC 100%, #7367F0 100%);}
+/************** Login Page CSS *************/
+
 .login-form {
     display: block;
     padding-top: 100px;
     height: 500px;
     margin: 0px;
-    background-image: linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%);
+    background-image: linear-gradient( 135deg, #CE9FFC 100%, #7367F0 100%);
 }
 
 .login-form .inner-form{
@@ -17,7 +21,7 @@
 .login-form .credentials-control{
     width: 60%;
     height: 50%;
-    margin: 25px auto;
+    margin: 25px auto 0px;
 }
 
 .login-form .credentials-control input {
@@ -42,12 +46,135 @@
     border: none;
 }
 
-.login-form .buttons {
+.main-column {
+    width: 100%;
+}
+
+.main-column .col-1,
+.main-column .col-2 {
+    width: 50%;
+    float: left;
+    background-color: transparent;
+    padding:auto;
+    text-align: center;
+
+}
+
+.login-form .buttons.primary {
+    display: inline-block;
+    text-align: center;
+    display: inline;
+}
+
+.login-form .buttons.primary button,
+.login-form .buttons.primary a {
+    width: 100%;
+    padding: 10px 25px;
+    border-radius: 20px;
+    background-color:#000000;
+    border: black;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-form .buttons.secondary {
+    display: block;
+    text-align: center;
+    padding-left: 40%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.login-form .buttons.secondary a {
+    margin: 0%;
+    padding: 0px;
+    border-radius: 20px;
+    background-color:transparent;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-form .buttons button:active,
+.login-form .buttons button:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.login-form .buttons a:active,
+.login-form .buttons a:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.login-form .err {
+    color: red;
+    font-weight: bold;
     text-align: center;
 }
 
+.login-form .err .alert{
+    color: white;
+    background-color: red;
+    opacity: 70%;
+    border: none;
+}
 
-.login-form .buttons button {
+/************** Sign up Page CSS *************/
+
+
+.signup-form {
+    display: block;
+    padding-top: 100px;
+    height: 500px;
+    margin: 0px;
+    background-image: linear-gradient( 135deg, #CE9FFC 100%, #7367F0 100%);
+}
+
+.signup-form .inner-form{
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    width: 30%;
+}
+
+.signup-form .information-control{
+    width: 60%;
+    height: 50%;
+    margin: 25px auto 0px;
+}
+
+.signup-form .information-control input {
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.signup-form .information-control label {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.signup-form .information-control input{
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 30px;
+    border: none;
+}
+
+.signup-form .buttons {
+    text-align: center;
+    margin-top: 4%;
+}
+
+.signup-form .buttons button,
+.signup-form .buttons a {
     margin-right: 20px;
     padding: 8px 20px;
     border-radius: 20px;
@@ -55,10 +182,34 @@
     border: black;
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.login-form .buttons button:active,
-.login-form .buttons button:hover {
+.signup-form .buttons.secondary {
+    text-align: center;
+    padding-left: 40%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.signup-form .buttons.secondary a {
+    margin: 0%;
+    padding: 0px;
+    border-radius: 20px;
+    background-color:transparent;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-form .buttons button:active,
+.signup-form .buttons button:hover {
+    color: gold;
+    cursor: pointer;
+}
+
+.signup-form .buttons a:active,
+.signup-form .buttons a:hover {
     color: gold;
     cursor: pointer;
 }
