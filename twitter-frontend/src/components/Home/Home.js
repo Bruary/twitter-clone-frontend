@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import axios from 'axios'
 import './Home.css'
-import AuthContext from '../../context/auth-context'
+import { userContext } from '../../context/userContext'
 
 export default class Home extends Component {
 
@@ -10,18 +10,18 @@ export default class Home extends Component {
         resp: null
     }
 
-    static contextType = AuthContext
+    // static contextType = AuthContext
 
-    async componentDidMount() {
-        const url = "http://localhost:4000/getTweets/"
+    // async componentDidMount() {
+    //     const url = "http://localhost:4000/getTweets/"
 
-        const response = await axios.post(url, {
-            token: this.context.token
-        })
+    //     const response = await axios.post(url, {
+    //         token: this.context.token
+    //     })
 
-        console.log('user: ', response)
-        this.setState({ resp: response.data, loading: false })
-    }
+    //     console.log('user: ', response)
+    //     this.setState({ resp: response.data, loading: false })
+    // }
 
     render() {
         return (
@@ -35,17 +35,17 @@ export default class Home extends Component {
                 <div className="column middle">
                     <div className="tweet-Container">
                         <div>
-                            {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[0].tweet)}</div>}</div>}
+                            {/* {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[0].tweet)}</div>}</div>} */}
                         </div>
                     </div>
                     <div className="tweet-Container">
                         <div>
-                            {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[1].tweet)}</div>}</div>}
+                            {/* {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[1].tweet)}</div>}</div>} */}
                         </div>
                     </div>
                     <div className="tweet-Container">
                         <div>
-                            {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[2].tweet)}</div>}</div>}
+                            {/* {this.state.loading || !this.state.resp ? <h2>Loading...</h2> : <div>{<div>{JSON.stringify(this.state.resp.tweets[2].tweet)}</div>}</div>} */}
                         </div>
                     </div>
                 </div>
