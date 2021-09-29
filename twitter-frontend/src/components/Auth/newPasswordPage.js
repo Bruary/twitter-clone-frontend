@@ -17,6 +17,7 @@ export default function NewPasswordPage() {
         try {
 
             response = await axios.post(url, {
+                "token": window.location.href.split('token=')[1],
                 "password": password
             })
             console.log("the response: ", response)
@@ -79,13 +80,11 @@ export default function NewPasswordPage() {
 
             < form className="forgotPassword-form col-2" onSubmit={handleSubmit}>
                 <div className="inner-form">
-                    <div className="information-control">
-                        <div>
-                            {errMsg ? getErrorEle() : null}
-                        </div>
-                        <div>
-                            {notificstionMsg ? getNotificationEle() : null}
-                        </div>
+                    <div className="notify-container">
+                        {errMsg ? getErrorEle() : null}
+                    </div>
+                    <div className="notify-container">
+                        {notificstionMsg ? getNotificationEle() : null}
                     </div>
                     <div className="information-control">
                         <label>New Password</label>
