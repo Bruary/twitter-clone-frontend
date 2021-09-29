@@ -1,7 +1,6 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Redirect, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
-import Home from './components/Home/Home'
 import Auth from './components/Auth/Auth'
 import userContext from './context/userContext'
 import SignupPage from './components/Auth/SignupPage'

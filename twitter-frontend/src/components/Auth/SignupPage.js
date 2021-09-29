@@ -1,5 +1,5 @@
-import React, { Component, useContext, useState, useRef, Fragment } from 'react'
-import { BrowserRouter as Router, Link, Redirect, useHistory } from 'react-router-dom'
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import axios from 'axios'
 import './SignupPage.css'
 

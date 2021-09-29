@@ -4,7 +4,6 @@ import React, { useState, useContext, useReducer } from 'react'
 import './Auth.css'
 import userContext from '../../context/userContext'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import SignupPage from './SignupPage'
 
 export default function Auth() {
 
